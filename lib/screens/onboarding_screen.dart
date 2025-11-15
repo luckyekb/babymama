@@ -16,9 +16,15 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   Future<void> _selectDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
       context: context,
-      initialDate: DateTime.now().subtract(const Duration(days: 90)),
-      firstDate: DateTime.now().subtract(const Duration(days: 280)),
-      lastDate: DateTime.now(),
+      initialDate: useDueDate
+          ? DateTime.now().add(const Duration(days: 100))
+          : DateTime.now().subtract(const Duration(days: 90)),
+      firstDate: useDueDate
+          ? DateTime.now()
+          : DateTime.now().subtract(const Duration(days: 280)),
+      lastDate: useDueDate
+          ? DateTime.now().add(const Duration(days: 280))
+          : DateTime.now(),
       helpText: useDueDate
           ? 'Выберите предполагаемую дату родов'
           : 'Выберите дату последних месячных',
