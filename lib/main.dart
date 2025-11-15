@@ -26,7 +26,7 @@ class BabyMamaApp extends StatelessWidget {
           ),
           textTheme: GoogleFonts.nunitoTextTheme(),
           useMaterial3: true,
-          cardTheme: CardTheme(
+          cardTheme: CardThemeData(
             elevation: 2,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20),
