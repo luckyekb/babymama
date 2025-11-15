@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'providers/pregnancy_provider.dart';
+import 'providers/doctor_diary_provider.dart';
+import 'providers/wellness_provider.dart';
+import 'providers/checklist_provider.dart';
 import 'screens/onboarding_screen.dart';
-import 'screens/home_screen.dart';
+import 'screens/main_navigation.dart';
 
 void main() {
   runApp(const BabyMamaApp());
@@ -14,8 +17,13 @@ class BabyMamaApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (_) => PregnancyProvider(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => PregnancyProvider()),
+        ChangeNotifierProvider(create: (_) => DoctorDiaryProvider()),
+        ChangeNotifierProvider(create: (_) => WellnessProvider()),
+        ChangeNotifierProvider(create: (_) => ChecklistProvider()),
+      ],
       child: MaterialApp(
         title: 'BabyMama',
         debugShowCheckedModeBanner: false,
@@ -53,7 +61,7 @@ class AppEntry extends StatelessWidget {
         }
 
         return provider.hasPregnancyDate
-            ? const HomeScreen()
+            ? const MainNavigation()
             : const OnboardingScreen();
       },
     );
