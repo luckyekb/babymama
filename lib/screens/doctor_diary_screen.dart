@@ -112,7 +112,7 @@ class _VisitCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dateFormat = DateFormat('d MMMM yyyy, HH:mm', 'ru_RU');
+    final dateFormat = DateFormat('d MMMM yyyy, HH:mm');
 
     return Card(
       margin: const EdgeInsets.only(bottom: 12),

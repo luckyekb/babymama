@@ -267,7 +267,7 @@ class _EntryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dateFormat = DateFormat('d MMMM yyyy', 'ru_RU');
+    final dateFormat = DateFormat('d MMMM yyyy');
     final moodEmojis = ['😢', '😕', '😐', '🙂', '😊'];
 
     return Card(
