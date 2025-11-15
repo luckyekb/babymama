@@ -19,7 +19,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       initialDate: DateTime.now().subtract(const Duration(days: 90)),
       firstDate: DateTime.now().subtract(const Duration(days: 280)),
       lastDate: DateTime.now(),
-      locale: const Locale('ru', 'RU'),
       helpText: useDueDate
           ? 'Выберите предполагаемую дату родов'
           : 'Выберите дату последних месячных',
